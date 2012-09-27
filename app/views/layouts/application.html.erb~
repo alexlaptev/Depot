@@ -13,7 +13,7 @@
     <%= @page_title || "Progmatic Bookshelf" %>
   </div>
 
-  <div id="columns">
+  <div id="collumns">
 
     <div id="side">
       <ul>
