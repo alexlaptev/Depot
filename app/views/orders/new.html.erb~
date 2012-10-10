@@ -1,0 +1,8 @@
+<div class="depot_form">
+  <fieldset>
+  </fieldset>
+</div>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', orders_path %>

@@ -64,5 +64,12 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
+  
+  test "should be right tags" do
+    get :index
+    assert_select '.product_list'
+    assert_select '.list_actions a', :minimum => 3
+  end  
+
 end
 

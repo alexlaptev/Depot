@@ -34,4 +34,21 @@ Depot::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+ 
 end
+
+require 'tlsmail'
+
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+    :address =>             'smtp.gmail.com',
+    :port =>                587,
+    :domain =>              'http://localhost:3000/',
+    :authentication =>      "plain",
+    :user_name =>           'hello.kenpark@gmail.com',
+    :password =>            '2dollars',
+    :enable_starttls_auto => true
+  }

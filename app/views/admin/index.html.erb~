@@ -1,0 +1,4 @@
+<h1>Welcome</h2>
+
+Now <%= Time.now %>
+We have <%= pularize(@totla_orders, "order") %>

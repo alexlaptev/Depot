@@ -1,4 +1,4 @@
-<div id="product_list">
+<div class="product_list">
   <h1>Listing products</h1>
 
   <table>

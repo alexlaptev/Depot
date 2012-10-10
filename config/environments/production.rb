@@ -64,4 +64,23 @@ Depot::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  
+  
 end
+
+require 'tlsmail'
+
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+    :address =>             'smtp.gmail.com',
+    :port =>                587,
+    :domain =>              'http://localhost:3000/',
+    :authentication =>      "plain",
+    :user_name =>           'hello.kenpark@gmail.com',
+    :password =>            '2dollars',
+    :enable_starttls_auto => true
+  }
